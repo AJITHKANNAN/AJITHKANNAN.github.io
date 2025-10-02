@@ -5,29 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ajith Kannan - Data Scientist Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #f8f9fa; }
-    header { background: #0a66c2; color: #fff; padding: 30px; text-align: center; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background: #f8f9fa; scroll-behavior: smooth; }
+    header { background: #0a66c2; color: #fff; padding: 30px; text-align: center; animation: fadeIn 2s; }
     header h1 { margin: 0; font-size: 2.5em; }
     header p { margin: 5px 0; font-size: 1.2em; }
 
-    nav { background: #f4f4f4; text-align: center; padding: 10px; }
-    nav a { margin: 0 15px; text-decoration: none; color: #0a66c2; font-weight: bold; }
+    nav { background: #f4f4f4; text-align: center; padding: 10px; position: sticky; top: 0; z-index: 100; }
+    nav a { margin: 0 15px; text-decoration: none; color: #0a66c2; font-weight: bold; transition: color 0.3s; }
+    nav a:hover { color: #084a8c; }
 
-    section { padding: 10px 20px ; max-width: 1000px; margin: auto; }
-    h2 { color: #0a66c2; border-bottom: 2px solid #0a66c2; padding-bottom: 5px; }
-    ul { padding-left: 20px; }
+    section { padding: 20px; max-width: 1000px; margin: auto; }
+    h2 { color: #0a66c2; border-bottom: 2px solid #0a66c2; padding-bottom: 5px; margin-bottom: 10px; }
+    h3 { margin-top: 15px; color: #084a8c; }
+    ul { padding-left: 20px; margin: 10px 0; }
+    ul li { transition: 0.2s; }
+    ul li:hover { background: #eef6fc; padding-left: 5px; }
+
+    details { margin: 10px 0; background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 10px; }
+    details summary { cursor: pointer; font-weight: bold; color: #0a66c2; }
 
     footer { text-align: center; padding: 20px; background: #0a66c2; color: #fff; margin-top: 30px; }
-    .contact a { color: #0a66c2; text-decoration: none; font-weight: bold; }
+
+    /* Back to Top Button */
+    #topBtn {
+      display: none; position: fixed; bottom: 20px; right: 20px;
+      z-index: 99; font-size: 18px; border: none; outline: none;
+      background: #0a66c2; color: white; cursor: pointer;
+      padding: 10px 15px; border-radius: 8px;
+    }
+    #topBtn:hover { background: #084a8c; }
+
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Ajith Kannan</h1>
     <p>Data Scientist | GenAI Developer</p>
-    <p>📞 +91 8825602287 | ✉️ <a href="mailto:ajithkannan13698@gmail.com" style="color:white;">ajithkannan13698@gmail.com</a> | <a href="http://www.linkedin.com/in/k-ajith/" style="color:white;">LinkedIn</a> | 
-       <a href="http://www.github.com/AJITHKANNAN" style="color:white;">GitHub</a> </p>
-    
+    <p>📞 +91 8825602287 | ✉️ <a href="mailto:ajithkannan13698@gmail.com" style="color:white;">ajithkannan13698@gmail.com</a> | 
+       <a href="http://www.linkedin.com/in/k-ajith/" style="color:white;">LinkedIn</a> | 
+       <a href="http://www.github.com/AJITHKANNAN" style="color:white;">GitHub</a></p>
   </header>
 
   <nav>
@@ -42,92 +63,90 @@
   <section id="summary">
     <h2>Professional Summary</h2>
     <ul>
-      <li>Delivered<b> 2</b> Gen AI projects end-to-end, attaining on-time delivery and smooth support transition.</li>
-      <li>Engineered a medical knowledge graph (30 TB data, 10+ databases), strengthening discovery efficiency by<b> 30%</b>.</li>
-      <li>Systematized UI test-case generation with Multi-AI Agent, securing <b>70% </b>workflow coverage.</li>
-      <li>Shrunk model feedback time by<b> 8x (23s → 3s)</b> via quantization.</li>
-      <li>Boosted chatbot accuracy by <b>50%</b> with advanced NLP (intent/entity, multilingual).</li>
-      <li>Built <b>5+ </b>interactive dashboards, simplifying analysis turnaround by <b>40%</b>.</li>
-      <li>Applied LLM & RAG frameworks (HuggingFace, Langchain, Haystack) to deploy scalable AI solutions.</li>
+      <li><b>Delivered 2 Gen AI projects</b> end-to-end, attaining on-time delivery and smooth support transition.</li>
+      <li><b>Engineered a medical knowledge graph</b> (30 TB data, 10+ databases), strengthening discovery efficiency by <b>30%</b>.</li>
+      <li><b>Systematized UI test-case generation</b> with <b>Multi-AI Agent</b>, securing <b>70% workflow coverage</b>.</li>
+      <li><b>Shrunk model feedback time by 8x</b> (23s → 3s) via <b>quantization</b>.</li>
+      <li><b>Boosted chatbot accuracy by 50%</b> with advanced <b>NLP</b> (intent/entity, multilingual).</li>
+      <li><b>Built 5+ interactive dashboards</b>, simplifying analysis turnaround by <b>40%</b>.</li>
+      <li>Applied <b>LLM & RAG frameworks</b> (HuggingFace, LangChain, Haystack) to deploy scalable AI solutions.</li>
     </ul>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
-    <p><b>Programming:</b> Python, SQL, MongoDB, Flask, Streamlit, GraphQL, VectorDB, SDLC</p>
-    <p><b>ML Frameworks:</b> TensorFlow, Keras, Scikit-Learn, Langchain, Haystack</p>
-    <p><b>Deep Learning:</b> Neural Networks, CNN, RNN, Transfer Learning, Image Processing</p>
-    <p><b>NLP:</b> spaCy, Hugging Face, Word Embeddings, Sentiment Analysis, Text Classification</p>
-    <p><b>LLMs:</b> BERT, GPT-2, RoBERTa, Flan-T5, Neural-Chat, Phi-3</p>
-    <p><b>Visualization:</b> Matplotlib, Seaborn, PowerBI</p>
-    <p><b>Statistics:</b> Regression Analysis, Hypothesis Testing</p>
-    <p><b>Deployment:</b> GitHub, Docker, MLFlow, DVC, GitHub Actions, Jenkins</p>
+    <details open>
+      <summary>Technical Skills</summary>
+      <p><b>Programming:</b> Python, SQL, MongoDB, Flask, Streamlit, GraphQL, VectorDB, SDLC</p>
+      <p><b>ML Frameworks:</b> TensorFlow, Keras, Scikit-Learn, Langchain, Haystack</p>
+      <p><b>Deep Learning:</b> Neural Networks, CNN, RNN, Transfer Learning, Image Processing</p>
+      <p><b>NLP:</b> spaCy, Hugging Face, Word Embeddings, Sentiment Analysis, Text Classification</p>
+      <p><b>LLMs:</b> BERT, GPT-2, RoBERTa, Flan-T5, Neural-Chat, Phi-3</p>
+      <p><b>Visualization:</b> Matplotlib, Seaborn, PowerBI</p>
+      <p><b>Statistics:</b> Regression Analysis, Hypothesis Testing</p>
+      <p><b>Deployment:</b> GitHub, Docker, MLFlow, DVC, GitHub Actions, Jenkins</p>
+    </details>
   </section>
 
   <section id="experience">
     <h2>Professional Experience</h2>
     <h3>Data Scientist | Aaum Research and Analytics Pvt Ltd | May 2024 – Present</h3>
     <ul>
-      <li>Implemented GraphQL-based knowledge graph with Dgraph, cutting response delay by <b>50–70%</b>.</li>
-      <li>Optimized medical RAG chatbot (Mistral-7B, multi-PDF ingestion) to <b>85%</b> retrieval accuracy.</li>
-      <li>Designed RAG QA chatbot with Neural-Chat-7B + HayStack, improving response time by <b>30%</b>.</li>
-      <li>Reduced manual QA effort by <b>50%</b> via Multi-AI Agent testcase generation with <b>Playwright, BeautifulSoup</b>.</li>
+      <li>Implemented <b>GraphQL-based knowledge graph</b> with Dgraph, cutting response delay by <b>50–70%</b>.</li>
+      <li>Optimized <b>medical RAG chatbot</b> (Mistral-7B, multi-PDF ingestion) to <b>85%</b> retrieval accuracy.</li>
+      <li>Designed <b>RAG QA chatbot</b> with Neural-Chat-7B + HayStack, improving response time by <b>30%</b>.</li>
+      <li>Reduced manual QA effort by <b>50%</b> via Multi-AI Agent testcase generation.</li>
     </ul>
 
-    <h3>Data Integration Engineer | Cognisive IT Services (formerly Indmax) | Dec 2020 – Apr 2024</h3>
+    <h3>Data Integration Engineer | Cognisive IT Services | Dec 2020 – Apr 2024</h3>
     <ul>
-      <li>Developed ML models that forecasted trends with <b>80%</b> precision.</li>
-      <li>Minimized data transfer times by <b>35%</b> by revamping SQL integrations.</li>
-      <li>Collaborated cross-functionally to align integration with business goals.</li>
-      <li>Pushed operational efficiency by <b>15%</b> through iterative integration strategies.</li>
+      <li>Developed ML models that forecasted trends with <b>80% precision</b>.</li>
+      <li>Minimized data transfer times by <b>35%</b> with optimized SQL integrations.</li>
+      <li>Aligned integration solutions with business goals in cross-functional teams.</li>
+      <li>Increased operational efficiency by <b>15%</b>.</li>
     </ul>
   </section>
 
   <section id="projects">
     <h2>Project Highlights</h2>
-    <h3>Medical Knowledge Graph</h3>
-    <ul>
-      <li>Unified 7+ medical data sources (10+ DBs, 30 TB), boosting accessibility by <b>80%</b>.</li>
-      <li>Constructed <b>GraphQL knowledge graph</b>, Dockerized for scalability.</li>
-      <li>Streamlined search with keyword-based retrieval (90% accuracy).</li>
-    </ul>
+    <details>
+      <summary>Medical Knowledge Graph</summary>
+      <ul>
+        <li>Unified 7+ public medical data sources (10+ DBs, 30 TB), boosting accessibility by <b>80%</b>.</li>
+        <li>Constructed <b>GraphQL knowledge graph</b>, Dockerized for scalability.</li>
+        <li>Streamlined search with keyword-based retrieval (90% accuracy).</li>
+      </ul>
+    </details>
 
-    <h3>Multi AI Agents</h3>
-    <ul>
-      <li>Developed Multi-AI Agent system with <b>LangChain, LangGraph, Groq APIs</b>.</li>
-      <li>Integrated Tavily search with FastAPI & Streamlit, boosting grounding by <b>35%</b>.</li>
-      <li>Productionized CI/CD pipelines with <b>Docker, Jenkins, SonarQube</b>.</li>
-    </ul>
+    <details>
+      <summary>Multi AI Agents</summary>
+      <ul>
+        <li>Developed Multi-AI Agent system with <b>LangChain, LangGraph, Groq APIs</b>.</li>
+        <li>Integrated Tavily web search with FastAPI & Streamlit, enhancing grounding by <b>35%</b>.</li>
+        <li>Productionized CI/CD pipelines with <b>Docker, Jenkins, SonarQube</b>.</li>
+      </ul>
+    </details>
 
-    <h3>Medical RAG ChatBot</h3>
-    <ul>
-      <li>Optimized retrieval with HuggingFace Inference + FAISS, reducing latency by <b>40%</b>.</li>
-      <li>Automated CI/CD with <b>Docker, Jenkins & AquaTrivy</b>, ensuring 100% vulnerability checks.</li>
-      <li>Scaled ingestion to <b>100+</b> PDFs (~1GB) with Flask & LangChain.</li>
-    </ul>
-
-    <h3>Smart Chatbot Development</h3>
-    <ul>
-      <li>Programmed<b> RAG</b> chatbot with<b> Neural-Chat-7B & OpenAI.</b></li>
-      <li>Reduced wait time by<b> 85% </b>using quantization.</li>
-      <li>Increased accuracy by <b>50%</b> via domain-specific NLP.</li>
-    </ul>
-
-    <h3>Analytics Dashboards</h3>
-    <ul>
-      <li>Created <b> 5 </b> interactive dashboards, cutting analysis turnaround by <b>40%.</b></li>
-      <li>Improved customer service with intent classification <b>(DeBERTa-v3-large, GPT-2)</b>.</li>
-      <li>Enhanced campaign effectiveness by <b>25%</b> via Python A/B testing.</li>
-    </ul>
+    <details>
+      <summary>Medical RAG ChatBot</summary>
+      <ul>
+        <li>Accelerated retrieval with HuggingFace Inference + FAISS, trimming latency by <b>40%</b>.</li>
+        <li>Automated CI/CD with <b>Docker, Jenkins, AquaTrivy</b>, ensuring 100% security compliance.</li>
+        <li>Scaled ingestion to <b>100+ PDFs</b> (~1 GB) with Flask & LangChain.</li>
+      </ul>
+    </details>
   </section>
 
   <section id="certifications">
     <h2>Certifications</h2>
-    <ul>
-      <li>Azure Data Scientist Associate (DP-100), Microsoft, Apr 2024</li>
-      <li>Accenture North America - Data Analytics & Visualization Simulation (Forage), Apr 2024</li>
-      <li>Standard Bank Data Science Job Simulation (Forage), May 2024</li>
-    </ul>
+    <details>
+      <summary>View Certifications</summary>
+      <ul>
+        <li>Azure Data Scientist Associate (DP-100) | Microsoft | Apr 2024</li>
+        <li>Accenture Data Analytics & Visualization Job Simulation | Apr 2024</li>
+        <li>Standard Bank Data Science Job Simulation | May 2024</li>
+      </ul>
+    </details>
   </section>
 
   <section id="education">
@@ -137,6 +156,26 @@
     <p><b>B.Tech Information Technology</b> – SNS College of Technology, Aug 2016 – Aug 2020</p>
   </section>
 
- 
+  <footer>
+    <p>© 2025 Ajith Kannan | Built with ❤️ | Hosted on GitHub Pages</p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button onclick="topFunction()" id="topBtn">⬆️</button>
+  <script>
+    let myBtn = document.getElementById("topBtn");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        myBtn.style.display = "block";
+      } else {
+        myBtn.style.display = "none";
+      }
+    }
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
 </body>
 </html>
